@@ -1,0 +1,15 @@
+path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: all 3s;
+    fill: none;
+    stroke: black;
+    stroke-width: 3;
+    stroke-linecap: round;
+    
+}
+
+.animate {
+    stroke-dashoffset: 0;
+    //    fill: black;
+}
