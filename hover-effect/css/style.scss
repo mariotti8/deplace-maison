@@ -1,0 +1,35 @@
+
+
+
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: calc(100vh - 13rem);
+	position: relative;
+	justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+		justify-content: center;
+}
+
+.distort {
+	position: absolute;
+	pointer-events: none;
+	will-change: transform;
+}
+
+.distort__img {
+	opacity: 0;
+}
+
+.quote {
+	display: block;
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	font-size: 2rem;
+	z-index: 999;
+	font-weight: normal;
+}
