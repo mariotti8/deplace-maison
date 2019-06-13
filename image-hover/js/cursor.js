@@ -4,7 +4,7 @@ const sineDots = Math.floor(amount * 0.3);
 const width = 26;
 const idleTimeout = 150;
 let lastFrame = 0;
-let mousePosition = {x: 0, y: 0};
+let mousePosition = { x: 0, y: 0 };
 let dots = [];
 let timeoutID;
 let idle = false;
@@ -20,11 +20,11 @@ class HoverButton {
         this.el = document.getElementById(id);
     }
 
-    onMouseEnter = () => {
+    onMouseEnter() {
         this.hoverInAnim();
     };
 
-    hoverInAnim = () => {
+    hoverInAnim() {
         if (!this.hovered) {
             this.hovered = true;
             this.animatingHover = true;
@@ -32,7 +32,7 @@ class HoverButton {
             TweenMax.fromTo(
                 this.bg,
                 this.timing,
-                {x: "-112%"},
+                { x: "-112%" },
                 {
                     x: "-12%",
                     ease: Power3.easeOut,
@@ -48,7 +48,7 @@ class HoverButton {
         }
     };
 
-    onMouseLeave = () => {
+    onMouseLeave() {
         if (!this.animatingHover) {
             this.hoverOutAnim();
         } else {
@@ -56,7 +56,7 @@ class HoverButton {
         }
     };
 
-    hoverOutAnim = () => {
+    hoverOutAnim() {
         this.hovered = false;
         TweenMax.to(this.bg, this.timing, {
             x: "100%",
@@ -77,7 +77,7 @@ class Dot {
         this.range = width / 2 - width / 2 * this.scale + 2;
         this.limit = width * 0.75 * this.scale;
         this.element = document.createElement("span");
-        TweenMax.set(this.element, {scale: this.scale});
+        TweenMax.set(this.element, { scale: this.scale });
         cursor.appendChild(this.element);
     }
 
@@ -90,13 +90,13 @@ class Dot {
 
     draw(delta) {
         if (!idle || this.index <= sineDots) {
-            TweenMax.set(this.element, {x: this.x, y: this.y});
+            TweenMax.set(this.element, { x: this.x, y: this.y });
         } else {
             this.angleX += this.anglespeed;
             this.angleY += this.anglespeed;
             this.y = this.lockY + Math.sin(this.angleY) * this.range;
             this.x = this.lockX + Math.sin(this.angleX) * this.range;
-            TweenMax.set(this.element, {x: this.x, y: this.y});
+            TweenMax.set(this.element, { x: this.x, y: this.y });
         }
     }
 }
