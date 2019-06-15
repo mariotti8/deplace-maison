@@ -1,3 +1,4 @@
+/* eslint-disable */
 const cursor = document.getElementById("cursor");
 const amount = 20;
 const sineDots = Math.floor(amount * 0.3);
@@ -12,7 +13,7 @@ let hoverButton;
 let hoverTL;
 
 class HoverButton {
-    constructor(id) {
+  constructor (id) {
         this.hovered = false;
         this.animatingHover = false;
         this.forceOut = false;
