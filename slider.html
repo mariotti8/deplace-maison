@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .img-wrapper,
+        .img-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .img {
+            padding: 1rem;
+            width: 300px;
+            height: 400px;
+        }
+
+
+
+        .panelCon {
+            bottom: 0;
+            left: 0;
+            width: 50%;
+        }
+
+        .panel {
+            width: 100%;
+        }
+
+        .panel h1 {
+            width: 100px;
+            position: relative;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            top: 50%;
+        }
+
+        #pane-1 {
+            background-color: green;
+        }
+
+        #pane-2 {
+            background-color: red;
+        }
+
+        #pane-3 {
+            background-color: white;
+        }
+
+        #pane-4 {
+            background-color: pink;
+        }
+
+        #pane-5 {
+            background-color: yellow;
+        }
+        #panelCon {
+            position: fixed;
+        }
+        .panel-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <main class="main-wrap">
+        <div class="img-wrapper" id="img-wrapper">
+            <div class="img-container" id="img-container">
+                <img src="carnera.jpg" class="img" alt="" srcset="">
+                <img src="carnera-wmns-white.jpg" class="img" alt="" srcset="">
+            </div>
+        </div>
+    </main> -->
+    <div class="panel-container" id="panel-container">
+        <div class="panelCon" id="panelCon">
+            <div id="pane-5" class="panel">
+                <h1>5</h1>
+            </div>
+            <div id="pane-4" class="panel">
+                <h1>4</h1>
+            </div>
+            <div id="pane-3" class="panel">
+                <h1>3</h1>
+            </div>
+            <div id="pane-2" class="panel">
+                <h1>2</h1>
+            </div>
+            <div id="pane-1" class="panel">
+                <h1>1</h1>
+            </div>
+        </div>
+        <div class="panelCon" id="panelConw">
+                <div id="pane-5" class="panel">
+                    <h1>5</h1>
+                </div>
+                <div id="pane-4" class="panel">
+                    <h1>4</h1>
+                </div>
+                <div id="pane-3" class="panel">
+                    <h1>3</h1>
+                </div>
+                <div id="pane-2" class="panel">
+                    <h1>2</h1>
+                </div>
+                <div id="pane-1" class="panel">
+                    <h1>1</h1>
+                </div>
+            </div>
+    </div>
+    
+    <script src="https://d1tdp7z6w94jbb.cloudfront.net/js/jquery-3.3.1.min.js" type="text/javascript"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script>
+        //         const imgContainer = document.getElementById('img-container');
+        //         const imgWrapper = document.getElementById('img-wrapper');
+        const panelCon = document.getElementById('panelCon');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= $('#panel-container').height() - $(window).height() - 10) {
+                $('#panelCon').append(panelCon.innerHTML);
+                $('#panelConw').append(panelCon.innerHTML);
+            }
+        });
+        var winHeight = $(window).innerHeight();
+        $(document).ready(function () {
+            $(".panel").height(winHeight);
+            $("body").height(winHeight * $(".panel").length);
+        });
+
+        window.addEventListener('resize', function (event) {
+            $(".panel").height($(window).innerHeight());
+        });
+        $(window).on('scroll', function () {
+            // $(".panel").height(winHeight);
+            // $("body").height(winHeight * $(".panel").length);
+            $(".panelCon").css('bottom', $(window).scrollTop() * -1);
+        });
+
+    </script>
+</body>
+
+</html>
