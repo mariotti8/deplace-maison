@@ -8,7 +8,7 @@ $(document).ready(function() {
 
     function crisscross() {
         
-        var parent = $("#content");//.first();
+        var parent = $("#content").first();
         var clone = $(parent).clone();
         
         var leftSide = $(clone).find('.up-left');

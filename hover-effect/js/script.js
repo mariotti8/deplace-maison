@@ -42,7 +42,7 @@
         constructor() {
             this.DOM = {
                 svg: document.querySelector('svg.distort'),
-                menu: document.querySelector('blockquote.quote')
+                menu: document.querySelector('div.quote')
             };
             this.DOM.imgs = [...this.DOM.svg.querySelectorAll('g > image')];
             this.DOM.menuLinks = [...this.DOM.menu.querySelectorAll('.quote__link')];
@@ -103,7 +103,7 @@
             this.lastMousePos.displacement.y = lerp(this.lastMousePos.displacement.y, this.mousePos.y, 0.07);
             const mouseDistance = distance(this.lastMousePos.displacement.x, this.mousePos.x, this.lastMousePos.displacement.y, this.mousePos.y);
             this.dmScale = Math.min(lineEq(50, 0, 100, 0, mouseDistance), 50);   
-            feDisplacementMapEl.scale.baseVal = this.dmScale;
+            // feDisplacementMapEl.scale.baseVal = this.dmScale;
 
             requestAnimationFrame(() => this.render());
         }
