@@ -434,12 +434,12 @@
 
         Hamster($('.slides-container')[0]).wheel(function (event, delta, deltaX, deltaY) {
             event.preventDefault();
-            animateSlides(1 * (delta / 30));
+            animateSlides(1 * (delta / 15));
         });
 
         Hamster($('.slides-container2')[0]).wheel(function (event, delta, deltaX, deltaY) {
             event.preventDefault();
-            animateSlides(1 * (delta / 30));
+            animateSlides(1 * (delta / 15));
         });
 
         $(".slide").on('mouseenter', function () {
