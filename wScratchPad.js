@@ -97,9 +97,6 @@
             var s = (t.changedTouches || t.originalEvent.targetTouches)[0],
                 i = "";
             switch (t.type) {
-                case "touchstart":
-                    i = "mousemove";
-                    break;
                 case "touchmove":
                     i = "mousemove", t.preventDefault();
                     break;
