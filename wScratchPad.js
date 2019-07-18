@@ -93,10 +93,13 @@
         scratchMove: null,
         cursor: "crosshair"
     }, t.fn.bindMobileEvents = function() {
-        t(this).on("touchmove touchend touchcancel", function(t) {
+        t(this).on("touchstart touchmove touchend touchcancel", function(t) {
             var s = (t.changedTouches || t.originalEvent.targetTouches)[0],
                 i = "";
             switch (t.type) {
+                case "touchstart":
+                    i = "mousemove";
+                    break;
                 case "touchmove":
                     i = "mousemove", t.preventDefault();
                     break;
