@@ -37,7 +37,7 @@
       
       this.$scratchpad.bindMobileEvents();
 
-      if (window.matchMedia("(max-width: 971px)").matches) {
+    //   if (window.matchMedia("(max-width: 971px)").matches) {
       // Setup event handlers.
       this.$scratchpad
       .mousedown($.proxy(function (e) {
@@ -65,34 +65,34 @@
         }
       }, this));
 
-    } else {
-        this.$scratchpad
-      .hover($.proxy(function (e) {
+    // } else {
+    //     this.$scratchpad
+    //   .hover($.proxy(function (e) {
 
-        // If disabled we just return true which menas
-        // our our this.scratch will remain as false.
-        if (!this.enabled) {
-          return true;
-        }
+    //     // If disabled we just return true which menas
+    //     // our our this.scratch will remain as false.
+    //     if (!this.enabled) {
+    //       return true;
+    //     }
 
-        this.canvasOffset = $(this.canvas).offset();
+    //     this.canvasOffset = $(this.canvas).offset();
         
-        this.scratch = true;
-        this._scratchFunc(e, 'Down');
-      }, this))
-      .mousemove($.proxy(function (e) {
-        if (this.scratch) {
-          this._scratchFunc(e, 'Move');
-        }
-      }, this))
-      .mouseup($.proxy(function (e) {
-        if (this.scratch) {
-          this.scratch = false;
-          this._scratchFunc(e, 'Up');
-        }
-      }, this));
+    //     this.scratch = true;
+    //     this._scratchFunc(e, 'Down');
+    //   }, this))
+    //   .mousemove($.proxy(function (e) {
+    //     if (this.scratch) {
+    //       this._scratchFunc(e, 'Move');
+    //     }
+    //   }, this))
+    //   .mouseup($.proxy(function (e) {
+    //     if (this.scratch) {
+    //       this.scratch = false;
+    //       this._scratchFunc(e, 'Up');
+    //     }
+    //   }, this));
 
-    }
+    // }
 
       // Run options
       this._setOptions();
