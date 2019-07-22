@@ -15,12 +15,12 @@
                 position: "absolute",
                 width: "100%",
                 height: "100%"
-            }), this.$scratchpad.bindMobileEvents(), this.$scratchpad.hover(t.proxy(function (s) {
+            }), this.$scratchpad.bindMobileEvents(), this.$scratchpad.mouseenter(t.proxy(function (s) {
                 if (!this.enabled) return !0;
                 s.preventDefault(), s.stopPropagation(), this.canvasOffset = t(this.canvas).offset(), this.scratch = !0, this._scratchFunc(s, "Down")
             }, this)).mousemove(t.proxy(function (t) {
                 this.scratch && this._scratchFunc(t, "Move")
-            }, this)).mouseup(t.proxy(function (t) {
+            }, this)).mouseleave(t.proxy(function (t) {
                 this.scratch && (this.scratch = !1, this._scratchFunc(t, "Up"))
             }, this)), this._setOptions(), this.$el.append(this.$img).append(this.$scratchpad), this.init = !0, this.reset()
         },
