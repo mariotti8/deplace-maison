@@ -98,14 +98,14 @@
                 i = "";
             switch (event.type) {
                 case 'touchstart':
-                    type = 'mouseenter';
+                    type = 'mousedown';
                     break;
                 case 'touchmove':
                     type = 'mousemove';
                     event.preventDefault();
                     break;
                 case 'touchend':
-                    type = 'mouseleave';
+                    type = 'mouseup';
                     break;
                 default:
                     return;
