@@ -96,12 +96,19 @@
         t(this).on("touchstart touchmove touchend touchcancel", function (t) {
             var s = (t.changedTouches || t.originalEvent.targetTouches)[0],
                 i = "";
-            switch (t.type) {
-                case "touchmove":
-                    i = "mousemove", t.preventDefault();
+            switch (event.type) {
+                case 'touchstart':
+                    type = 'mouseenter';
+                    break;
+                case 'touchmove':
+                    type = 'mousemove';
+                    event.preventDefault();
+                    break;
+                case 'touchend':
+                    type = 'mouseleave';
                     break;
                 default:
-                    return
+                    return;
             }
             var e = document.createEvent("MouseEvent");
             e.initMouseEvent(i, !0, !0, window, 1, s.screenX, s.screenY, s.clientX, s.clientY, !1, !1, !1, !1, 0, null), s.target.dispatchEvent(e)
